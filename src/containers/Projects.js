@@ -1,10 +1,8 @@
-import React from 'react'
+import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
+
 const Projects = () => {
-    return (
-        <section id="projects">
+  return <section id="projects"></section>;
+};
 
-        </section>
-    )
-}
-
-export default Projects
+export default Projects;

@@ -1,10 +1,8 @@
-import React from 'react'
+import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
+
 const Services = () => {
-    return (
-        <section id="services">
+  return <section id="services"></section>;
+};
 
-        </section>
-    )
-}
-
-export default Services
+export default Services;

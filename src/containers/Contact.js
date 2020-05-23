@@ -1,10 +1,8 @@
-import React from 'react'
+import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
+
 const Contact = () => {
-    return (
-        <section id="contact">
+  return <section id="contact"></section>;
+};
 
-        </section>
-    )
-}
-
-export default Contact
+export default Contact;

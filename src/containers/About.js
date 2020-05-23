@@ -1,11 +1,8 @@
-import React from 'react'
+import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
 
 const About = () => {
-    return (
-        <section id="about">
+  return <section id="about"></section>;
+};
 
-        </section>
-    )
-}
-
-export default About
+export default About;

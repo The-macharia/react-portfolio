@@ -1,15 +1,13 @@
-import React from 'react'
-import Nav from '../components/Navigation/Nav'
-
+import React from "react";
+import Nav from "../components/Navigation/Nav";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Header = (props) => {
-    return (
-        <section id="home">
-            <div className="container">
-                <Nav links={props.links} />
-            </div>
-        </section>
-    )
-}
+  return (
+    <header className="container" id="home">
+      <Nav links={props.links} />
+    </header>
+  );
+};
 
-export default Header
+export default Header;
