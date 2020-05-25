@@ -1,7 +1,7 @@
 import React from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 // import Logo from "../UI/Logo";
-import Link from "./Link";
+import Link from "./Links";
 import { Button } from "@material-ui/core";
 
 const Nav = (props) => {
@@ -15,7 +15,7 @@ const Nav = (props) => {
         TheMacharia
       </a>
       <Button
-        style={{ color: "#04091e", backgroundColor: "#8e701d" }}
+        // style={{ color: "#04091e", backgroundColor: "#8e701d" }}
         className="navbar-toggler"
         type="button"
         data-toggle="collapse"
@@ -23,16 +23,17 @@ const Nav = (props) => {
         aria-controls="navbarText"
         aria-expanded="false"
         aria-label="Toggle navigation"
+        onClick={props.clicked}
       >
         <span>
-          <MenuIcon style={{ color: "white", fontSize: "3rem" }} />
+          <MenuIcon style={{ color: "black", fontSize: "3rem" }} />
         </span>
       </Button>
       <div
         className="collapse navbar-collapse justify-content-center"
         id="navbarText"
       >
-        <Link links={props.links} color={"white"} />
+        <Link links={props.links} color={"black"} />
       </div>
     </nav>
   );

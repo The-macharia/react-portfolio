@@ -1,6 +1,12 @@
 import React from "react";
+import styled from "@emotion/styled";
 
-const Link = (props) => {
+const UL = styled("ul")`
+  @media (max-width: 600px) {
+    background-color: #fff;
+  }
+`;
+const Links = (props) => {
   const linkStyles = {
     textTransform: "capitalize",
     color: props.color,
@@ -13,7 +19,7 @@ const Link = (props) => {
     alignItems: "center",
   };
   return (
-    <ul className="navbar-nav" style={ulStyles}>
+    <UL className="navbar-nav" style={ulStyles}>
       {props.links.map((link) => (
         <li className="nav-item active" key={link}>
           <a
@@ -25,8 +31,8 @@ const Link = (props) => {
           </a>
         </li>
       ))}
-    </ul>
+    </UL>
   );
 };
 
-export default Link;
+export default Links;
