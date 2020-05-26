@@ -1,47 +1,54 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import Heading from "../components/UI/Heading";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
+
+import Cards from "../components/UI/Card";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Heading from "../components/UI/Heading";
+// import { Paper } from "@material-ui/core";
 
-const About = () => {
+const About = (props) => {
   return (
     <section id="about">
       <Container>
-        <Heading title="About Me" />
         <Row>
           <div className="col-md-6">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">About Me</h5>
-                <p className="card-text">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Earum error necessitatibus quis, eaque reiciendis vero optio
-                  esse tempora laboriosam aliquid expedita assumenda hic aliquam
-                  repellat maiores ipsa minima quod est.
-                </p>
-              </div>
+            <Cards
+              title={"About Me"}
+              text={
+                "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus quis, eaque reiciendis vero optio esse tempora laboriosam aliquid expedita assumenda hic aliquam repellat maiores ipsa minima quod est."
+              }
+            />
+            <div className="row w-50 my-3">
+              {props.about.map((el) => (
+                <div
+                  className="d-flex flex-column col text-center"
+                  key={el.text}
+                >
+                  <span>{el.icon}</span>
+                  <span>{el.text}</span>
+                </div>
+              ))}
             </div>
           </div>
-          <Col md={6}>
-            <Card>
-              <Card.Title>Current Stack</Card.Title>
-              <Card.Body>
-                <span>Python</span>
-                <span>ReactJS</span>
-                <span>HTML</span>
-                <span>CSS & SASS</span>
-                <span>VanillaJS</span>
-                <span>JQuery</span>
-                <span>Flask</span>
-                <span>Odoo</span>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md={6}></Col>
+          <div className="col-md-6">
+            <Heading title={"Current Stack"} />
+            <div className="row">
+              {props.programming.map((language) =>
+                Object.entries(language).map((el) => (
+                  <div key={el[0]} className="p-3 my-3 text-center w-100">
+                    <h5>{el[0]}:</h5>
+                    {el[1].map((lang) => (
+                      <span style={{ width: "2rem" }} key={Math.random()}>
+                        {lang}
+                      </span>
+                    ))}
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
         </Row>
       </Container>
     </section>

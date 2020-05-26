@@ -9,7 +9,7 @@ const Card = (props) => (
     <div className="card-body">
       <h1 className="card-title text-uppercase">{props.title}</h1>
       <p className="card-text">{props.text} </p>
-      <Button>Hire Me</Button>
+      {props.btn && <Button>{props.btn}</Button>}
     </div>
   </div>
 );
