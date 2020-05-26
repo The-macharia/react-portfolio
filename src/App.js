@@ -53,7 +53,8 @@ class App extends Component {
 
             section,
             header,
-            .container {
+            .container,
+            .container-fluid {
               min-height: 100vh;
             }
             h1 {
@@ -63,25 +64,48 @@ class App extends Component {
               color: #222;
             }
             h5 {
-              font-weight: light;
+              backgroud-color: transparent !important;
+              font-weight: bold;
+              font-family: "Roboto", sans-serif;
               letter-spacing: 0.1rem;
+              font-size: 1.55rem;
             }
             .card {
               border: none !important;
               background-color: transparent;
             }
+            svg {
+              width: 100%;
+              height: 100%;
+            }
+
             .card,
             h5 {
               border: none !important;
             }
-            @media (min-width: 600px) {
-              h1 {
-                font-size: 4.8rem;
-              }
-            }
+            ${"" /* MEDIA QUERIES */}
+
             @media (max-width: 600px) {
+              section,
+              header,
+              .container,
+              .container-fluid {
+                min-height: 70vh;
+              }
+              .svg-box {
+                height: 50vh !important;
+                margin-bottom: 2rem;
+              }
               nav {
                 background-color: #fff;
+              }
+            }
+            @media (min-width: 600px) {
+              .svg-box {
+                height: 80vh;
+              }
+              h1 {
+                font-size: 4.8rem;
               }
             }
           `}

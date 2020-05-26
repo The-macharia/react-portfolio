@@ -5,14 +5,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
-import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const About = () => {
   return (
     <section id="about">
       <Container>
         <Heading title="About Me" />
-        <div className="row">
+        <Row>
           <div className="col-md-6">
             <div className="card">
               <div className="card-body">
@@ -26,8 +26,6 @@ const About = () => {
               </div>
             </div>
           </div>
-          {/* <div className="col-md-6">
-            <Row> */}
           <Col md={6}>
             <Card>
               <Card.Title>Current Stack</Card.Title>
@@ -44,9 +42,7 @@ const About = () => {
             </Card>
           </Col>
           <Col md={6}></Col>
-          {/* </Row>
-          </div> */}
-        </div>
+        </Row>
       </Container>
     </section>
   );
