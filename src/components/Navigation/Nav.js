@@ -3,6 +3,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 // import Logo from "../UI/Logo";
 import Link from "./Links";
 import { Button } from "@material-ui/core";
+import { ReactComponent as Logo } from "../../assets/logo.svg";
 
 const Nav = (props) => {
   const styles = {
@@ -12,7 +13,7 @@ const Nav = (props) => {
   return (
     <nav className="navbar navbar-expand-sm fixed-top w-100" style={styles}>
       <a className="navbar-brand mr-auto" href="/">
-        TheMacharia
+        <Logo />
       </a>
       <Button
         // style={{ color: "#04091e", backgroundColor: "#8e701d" }}

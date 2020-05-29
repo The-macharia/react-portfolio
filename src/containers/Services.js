@@ -1,11 +1,11 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import Heading from "../components/UI/Heading";
+import Heading from "../components/Heading";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Card from "../components/UI/Card";
+import Card from "../components/Card";
 
 const Services = () => {
   return (

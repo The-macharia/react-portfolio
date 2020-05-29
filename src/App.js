@@ -7,7 +7,7 @@ import Projects from "./containers/Projects";
 import Contact from "./containers/Contact";
 import Footer from "./containers/Footer";
 import { Global, css } from "@emotion/core";
-import Backdrop from "./components/UI/Backdrop";
+import Backdrop from "./components/Backdrop";
 import DescriptionIcon from "@material-ui/icons/Description";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -161,6 +161,9 @@ class App extends Component {
             span svg {
               width: 5rem !important;
             }
+            nav a {
+              width: 50% !important;
+            }
 
             .card,
             h5 {
@@ -189,6 +192,9 @@ class App extends Component {
               }
               h1 {
                 font-size: 4.8rem;
+              }
+              nav a {
+                width: 20% !important;
               }
             }
           `}

@@ -2,10 +2,10 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Row from "react-bootstrap/Row";
 
-import Cards from "../components/UI/Card";
+import Cards from "../components/Card";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Heading from "../components/UI/Heading";
+import Heading from "../components/Heading";
 // import { Paper } from "@material-ui/core";
 
 const About = (props) => {

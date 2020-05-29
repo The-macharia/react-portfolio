@@ -2,15 +2,8 @@ import React from "react";
 import Nav from "../components/Navigation/Nav";
 import "bootstrap/dist/css/bootstrap.css";
 import Image from "../assets/wave.jpg";
-import Card from "../components/UI/Card";
-// import HeaderImage from "../assets/img3.png";
-// import styled from "@emotion/styled";
-// import { jsx } from "@emotion/core";
+import Card from "../components/Card";
 import { ReactComponent as ReactImage } from "../assets/svg31.svg";
-
-// const Img = styled.img`
-//   width: 100%;
-// `;
 
 const Header = (props) => {
   const styles = {
