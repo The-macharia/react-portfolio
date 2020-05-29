@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 const Heading = (props) => {
   const styles = {
     textAlign: "center",
-    marginBottom: "3rem",
+    marginBottom: props.mb,
     color: props.color,
   };
 
@@ -18,7 +18,7 @@ const Heading = (props) => {
 
   return (
     <Grid item xs={12} style={styles}>
-      <h1>{props.title}</h1>
+      <h1 style={{ fontSize: "3rem" }}>{props.title}</h1>
       {subtitle}
     </Grid>
   );

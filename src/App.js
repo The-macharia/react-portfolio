@@ -52,34 +52,64 @@ class App extends Component {
     programming: [
       {
         languages: [
-          <PythonLogo />,
-          <JsLogo />,
-          <NodeLogo />,
-          <HtmlLogo />,
-          <CssLogo />,
+          <PythonLogo style={{ width: "50%" }} />,
+          <JsLogo style={{ width: "50%" }} />,
+          <NodeLogo style={{ width: "50%" }} />,
+          <HtmlLogo style={{ width: "50%" }} />,
+          <CssLogo style={{ width: "50%" }} />,
         ],
       },
       {
         frameworks: [
-          <ReactLogo />,
-          <JqueryLogo />,
-          <ExpressLogo />,
-          <BootstrapLogo />,
-          <SassLogo />,
+          <ReactLogo style={{ width: "50%" }} />,
+          <JqueryLogo style={{ width: "50%" }} />,
+          <ExpressLogo style={{ width: "50%" }} />,
+          <BootstrapLogo style={{ width: "50%" }} />,
+          <SassLogo style={{ width: "50%" }} />,
         ],
       },
       {
-        databases: [<PostgresqlLogo />, <MongoLogo />, <MysqlLogo />],
+        databases: [
+          <PostgresqlLogo style={{ width: "40%" }} />,
+          <MongoLogo style={{ width: "40%" }} />,
+          <MysqlLogo style={{ width: "40%" }} />,
+        ],
       },
       {
         tools: [
-          <GitLogo />,
-          <TrelloLogo />,
-          <LinuxLogo />,
-          <SshLogo />,
-          <HerokuLogo />,
-          <WebpackLogo />,
+          <GitLogo style={{ width: "70%" }} />,
+          <TrelloLogo style={{ width: "70%" }} />,
+          <LinuxLogo style={{ width: "70%" }} />,
+          <SshLogo style={{ width: "70%" }} />,
+          <HerokuLogo style={{ width: "70%" }} />,
+          <WebpackLogo style={{ width: "70%" }} />,
         ],
+      },
+    ],
+    services: [
+      {
+        icon: <GitHubIcon style={{ fontSize: "6rem" }} />,
+        title: "Responsive Web design",
+        text:
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus quis,",
+      },
+      {
+        icon: <GitHubIcon style={{ fontSize: "6rem" }} />,
+        title: "Web development",
+        text:
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus quis,",
+      },
+      {
+        icon: <GitHubIcon style={{ fontSize: "6rem" }} />,
+        title: "Mobile Apps Development",
+        text:
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus quis,",
+      },
+      {
+        icon: <GitHubIcon style={{ fontSize: "6rem" }} />,
+        title: "eRP Development",
+        text:
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus quis,",
       },
     ],
   };
@@ -100,7 +130,7 @@ class App extends Component {
             about={this.state.about}
             programming={this.state.programming}
           />
-          <Services />
+          <Services services={this.state.services} />
           <Projects />
           <Contact />
         </main>
@@ -137,7 +167,6 @@ class App extends Component {
             h1 {
               font-weight: bold;
               letter-spacing: 0.1rem;
-              font-size: 3rem;
               color: #222;
             }
             h5 {
@@ -172,12 +201,12 @@ class App extends Component {
             ${"" /* MEDIA QUERIES */}
 
             @media (max-width: 600px) {
-              ${"" /* section,
+              section,
               header,
               .container,
               .container-fluid {
-                min-height: 70vh;
-              } */}
+                min-height: 100vh;
+              }
               .svg-box {
                 height: 50vh !important;
                 margin-bottom: 2rem;

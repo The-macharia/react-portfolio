@@ -38,12 +38,20 @@ const About = (props) => {
               {props.programming.map((language) =>
                 Object.entries(language).map((el) => (
                   <div key={el[0]} className="p-3 my-3 text-center w-100">
-                    <h5>{el[0]}:</h5>
-                    {el[1].map((lang) => (
-                      <span style={{ width: "2rem" }} key={Math.random()}>
-                        {lang}
-                      </span>
-                    ))}
+                    <div className="text-center">
+                      <h5>{el[0]}:</h5>
+                    </div>
+                    <div className="row text-center">
+                      {el[1].map((lang) => (
+                        <div
+                          className="col"
+                          style={{ width: "1rem" }}
+                          key={Math.random()}
+                        >
+                          {lang}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 ))
               )}

@@ -5,32 +5,23 @@ import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Card from "../components/Card";
+import { ServiceCard } from "../components/Card";
 
-const Services = () => {
+const Services = (props) => {
   return (
     <section id="services">
       <Container>
-        <Heading title="What I Do" />
+        <Heading title="What I Do" mb={"3rem"} />
         <Row>
-          <Col sm={12}>
-            <Card
-              title={"Responsive Web Design"}
-              text="Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Earum error necessitatibus quis, eaque reiciendis vero optio
-                  esse tempora laboriosam aliquid expedita assumenda hic aliquam
-                  repellat maiores ipsa minima quod est"
-            />
-          </Col>
-          <Col sm={12}>
-            <Card title={"Responsive Web Development"} />
-          </Col>
-          <Col sm={12}>
-            <Card title={"Mobile Apps"} />
-          </Col>
-          <Col sm={12}>
-            <Card title={"ERP Development"} />
-          </Col>
+          {props.services.map((service) => (
+            <Col sm={12} md={3} key={service.title}>
+              <ServiceCard
+                title={service.title}
+                icon={service.icon}
+                text={service.text}
+              />
+            </Col>
+          ))}
         </Row>
       </Container>
     </section>
