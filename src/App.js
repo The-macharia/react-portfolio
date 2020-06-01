@@ -13,23 +13,23 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import { ReactComponent as PythonLogo } from "./assets/python.svg";
 import { ReactComponent as JsLogo } from "./assets/js.svg";
-import { ReactComponent as NodeLogo } from "./assets/node.svg";
 import { ReactComponent as HtmlLogo } from "./assets/html.svg";
 import { ReactComponent as CssLogo } from "./assets/css.svg";
 import { ReactComponent as ReactLogo } from "./assets/react.svg";
 import { ReactComponent as JqueryLogo } from "./assets/jquery.svg";
-import { ReactComponent as ExpressLogo } from "./assets/express.svg";
 import { ReactComponent as BootstrapLogo } from "./assets/bootstrap.svg";
 import { ReactComponent as SassLogo } from "./assets/sass.svg";
 import { ReactComponent as PostgresqlLogo } from "./assets/postgresql.svg";
 import { ReactComponent as MongoLogo } from "./assets/mongo.svg";
 import { ReactComponent as MysqlLogo } from "./assets/mysql.svg";
 import { ReactComponent as GitLogo } from "./assets/git.svg";
-import { ReactComponent as TrelloLogo } from "./assets/trello.svg";
 import { ReactComponent as LinuxLogo } from "./assets/linux.svg";
 import { ReactComponent as SshLogo } from "./assets/ssh.svg";
-import { ReactComponent as HerokuLogo } from "./assets/heroku.svg";
 import { ReactComponent as WebpackLogo } from "./assets/webpack.svg";
+import { ReactComponent as AppLogo } from "./assets/app.svg";
+import { ReactComponent as WebLogo } from "./assets/web.svg";
+import { ReactComponent as ErpLogo } from "./assets/erp.svg";
+import { ReactComponent as ResponsiveLogo } from "./assets/responsive.svg";
 
 class App extends Component {
   state = {
@@ -54,7 +54,7 @@ class App extends Component {
         languages: [
           <PythonLogo style={{ width: "50%" }} />,
           <JsLogo style={{ width: "50%" }} />,
-          <NodeLogo style={{ width: "50%" }} />,
+          // <NodeLogo style={{ width: "50%" }} />,
           <HtmlLogo style={{ width: "50%" }} />,
           <CssLogo style={{ width: "50%" }} />,
         ],
@@ -63,7 +63,7 @@ class App extends Component {
         frameworks: [
           <ReactLogo style={{ width: "50%" }} />,
           <JqueryLogo style={{ width: "50%" }} />,
-          <ExpressLogo style={{ width: "50%" }} />,
+          // <ExpressLogo style={{ width: "50%" }} />,
           <BootstrapLogo style={{ width: "50%" }} />,
           <SassLogo style={{ width: "50%" }} />,
         ],
@@ -78,38 +78,83 @@ class App extends Component {
       {
         tools: [
           <GitLogo style={{ width: "70%" }} />,
-          <TrelloLogo style={{ width: "70%" }} />,
           <LinuxLogo style={{ width: "70%" }} />,
           <SshLogo style={{ width: "70%" }} />,
-          <HerokuLogo style={{ width: "70%" }} />,
           <WebpackLogo style={{ width: "70%" }} />,
         ],
       },
     ],
     services: [
       {
-        icon: <GitHubIcon style={{ fontSize: "6rem" }} />,
+        icon: <ResponsiveLogo style={{ width: "100%", height: "50%" }} />,
         title: "Responsive Web design",
         text:
           "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus quis,",
       },
       {
-        icon: <GitHubIcon style={{ fontSize: "6rem" }} />,
+        icon: <WebLogo style={{ width: "100%", height: "50%" }} />,
         title: "Web development",
         text:
           "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus quis,",
       },
       {
-        icon: <GitHubIcon style={{ fontSize: "6rem" }} />,
+        icon: <AppLogo style={{ width: "100%", height: "50%" }} />,
         title: "Mobile Apps Development",
         text:
           "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus quis,",
       },
       {
-        icon: <GitHubIcon style={{ fontSize: "6rem" }} />,
+        icon: <ErpLogo style={{ width: "100%", height: "50%" }} />,
         title: "eRP Development",
         text:
           "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus quis,",
+      },
+    ],
+    form: [
+      {
+        el: "input",
+        type: "text",
+        config: {
+          placeholder: "Your Name",
+          id: "Name",
+        },
+        validation: {
+          required: true,
+          min: 4,
+        },
+      },
+      {
+        el: "input",
+        type: "email",
+        config: {
+          placeholder: "Your Email",
+          id: "Email",
+        },
+        validation: {
+          required: true,
+          min: 4,
+        },
+      },
+      {
+        el: "input",
+        type: "text",
+        config: {
+          placeholder: "Subject",
+          id: "Subject",
+        },
+      },
+      {
+        el: "textarea",
+        type: "text",
+        config: {
+          rows: 1,
+          placeholder: "Your Message",
+          id: "Message",
+        },
+        validation: {
+          required: true,
+          min: 4,
+        },
       },
     ],
   };
@@ -132,7 +177,7 @@ class App extends Component {
           />
           <Services services={this.state.services} />
           <Projects />
-          <Contact />
+          <Contact form={this.state.form} />
         </main>
         <Footer />
 
@@ -198,6 +243,7 @@ class App extends Component {
             h5 {
               border: none !important;
             }
+
             ${"" /* MEDIA QUERIES */}
 
             @media (max-width: 600px) {

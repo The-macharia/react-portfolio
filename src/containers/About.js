@@ -39,7 +39,16 @@ const About = (props) => {
                 Object.entries(language).map((el) => (
                   <div key={el[0]} className="p-3 my-3 text-center w-100">
                     <div className="text-center">
-                      <h5>{el[0]}:</h5>
+                      <h5
+                        style={{
+                          textTransform: "uppercase",
+                          margin: "1rem 0",
+                          lineHeight: "200%",
+                          letterSpacing: ".1rem",
+                        }}
+                      >
+                        {el[0]}:
+                      </h5>
                     </div>
                     <div className="row text-center">
                       {el[1].map((lang) => (

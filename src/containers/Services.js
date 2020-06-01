@@ -14,7 +14,7 @@ const Services = (props) => {
         <Heading title="What I Do" mb={"3rem"} />
         <Row>
           {props.services.map((service) => (
-            <Col sm={12} md={3} key={service.title}>
+            <Col sm={6} md={4} key={service.title}>
               <ServiceCard
                 title={service.title}
                 icon={service.icon}

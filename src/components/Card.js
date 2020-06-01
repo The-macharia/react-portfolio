@@ -22,20 +22,20 @@ const Div = styled("div")`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 25rem;
 `;
 const CardDiv = styled("div")`
   padding: 1rem 1.5rem;
   box-shadow: 0 0.1rem 2rem rgba(0, 0, 0, 0.35);
   margin: 1rem 0;
   transition: all 0.3s;
+  text-align: center;
 
-  @media (min-width: 700px) {
-    height: 30vh;
-  }
   :hover,
   :active {
     background-color: #222;
     color: #eee;
+    transform: scale(1.01);
     h1 {
       color: #eee;
     }
