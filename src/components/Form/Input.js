@@ -25,13 +25,34 @@ const Input = (props) => {
   let input;
   switch (props.elementType) {
     case "input":
-      input = <StyledInput type={props.type} {...props.config} />;
+      input = (
+        <StyledInput
+          type={props.type}
+          {...props.config}
+          value={props.value}
+          onChange={props.changed}
+        />
+      );
       break;
     case "textarea":
-      input = <textarea type={props.type} {...props.config} />;
+      input = (
+        <textarea
+          type={props.type}
+          {...props.config}
+          value={props.value}
+          onChange={props.changed}
+        />
+      );
       break;
     default:
-      input = <StyledInput type="text" {...props.config} />;
+      input = (
+        <StyledInput
+          type="text"
+          {...props.config}
+          value={props.value}
+          onChange={props.changed}
+        />
+      );
   }
   return input;
 };

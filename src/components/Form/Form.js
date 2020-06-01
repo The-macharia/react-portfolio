@@ -67,6 +67,8 @@ const Form = (props) => {
             type={element.type}
             elementType={element.el}
             config={element.config}
+            changed={props.changed}
+            value={element.value}
           />
         </div>
       ))}

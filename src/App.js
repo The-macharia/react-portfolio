@@ -110,53 +110,6 @@ class App extends Component {
           "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus quis,",
       },
     ],
-    form: [
-      {
-        el: "input",
-        type: "text",
-        config: {
-          placeholder: "Your Name",
-          id: "Name",
-        },
-        validation: {
-          required: true,
-          min: 4,
-        },
-      },
-      {
-        el: "input",
-        type: "email",
-        config: {
-          placeholder: "Your Email",
-          id: "Email",
-        },
-        validation: {
-          required: true,
-          min: 4,
-        },
-      },
-      {
-        el: "input",
-        type: "text",
-        config: {
-          placeholder: "Subject",
-          id: "Subject",
-        },
-      },
-      {
-        el: "textarea",
-        type: "text",
-        config: {
-          rows: 1,
-          placeholder: "Your Message",
-          id: "Message",
-        },
-        validation: {
-          required: true,
-          min: 4,
-        },
-      },
-    ],
   };
 
   hideBackdropToggler = () =>
