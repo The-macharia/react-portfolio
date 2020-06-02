@@ -41,6 +41,7 @@ const Form = (props) => {
     }
     label {
       line-height: 200%;
+      text-transform: capitalize;
     }
     button {
       padding: 1rem 2rem;
@@ -57,21 +58,23 @@ const Form = (props) => {
     }
   `;
 
+  const inputs = Object.entries(props.form).map((el) => (
+    <div key={el[0]}>
+      <label htmlFor={el[1].config.id}>{el[1].config.id}</label>
+      <Input
+        type={el[1].type}
+        elementType={el[1].el}
+        config={el[1].config}
+        changed={props.changed}
+        value={el[1].value}
+      />
+    </div>
+  ));
+
   return (
-    <StyledForm onSubmit={(e) => e.preventDefault()}>
+    <StyledForm onSubmit={props.submitHandler}>
       <h5>Contact Me</h5>
-      {props.form.map((element) => (
-        <div key={element.config.id}>
-          <label htmlFor={element.config.id}>{element.config.id}</label>
-          <Input
-            type={element.type}
-            elementType={element.el}
-            config={element.config}
-            changed={props.changed}
-            value={element.value}
-          />
-        </div>
-      ))}
+      {inputs}
       <button type="submit">Send</button>
     </StyledForm>
   );

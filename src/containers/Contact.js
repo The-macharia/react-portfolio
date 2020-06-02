@@ -9,65 +9,68 @@ import { ReactComponent as MailLogo } from "../assets/mail.svg";
 
 class Contact extends Component {
   state = {
-    form: [
-      {
+    form: {
+      name: {
         el: "input",
         type: "text",
         value: "",
         config: {
           placeholder: "Your Name",
-          id: "Name",
+          id: "name",
         },
         validation: {
           required: true,
           min: 4,
         },
       },
-      {
+      email: {
         el: "input",
         value: "",
         type: "email",
         config: {
           placeholder: "Your Email",
-          id: "Email",
+          id: "email",
         },
         validation: {
           required: true,
           min: 4,
         },
       },
-      {
+      subject: {
         el: "input",
         value: "",
         type: "text",
         config: {
           placeholder: "Subject",
-          id: "Subject",
+          id: "subject",
         },
       },
-      {
+      message: {
         el: "textarea",
         value: "",
         type: "text",
         config: {
           rows: 1,
           placeholder: "Your Message",
-          id: "Message",
+          id: "message",
         },
         validation: {
           required: true,
           min: 4,
         },
       },
-    ],
+    },
   };
 
-  onchangeHandler = (e, input) => {
-    console.log(input);
-
+  onChangeHandler = (e) => {
     const updatedForm = this.state.form;
+    updatedForm[e.target.id] = {
+      ...updatedForm[e.target.id],
+      value: e.target.value,
+    };
     this.setState({ form: updatedForm });
   };
+
   onsubmitHandler = (e) => {
     e.preventDefault();
   };
@@ -77,7 +80,7 @@ class Contact extends Component {
       <section id="contact" style={{}}>
         <Heading title="Say Hello" mb="3rem" />
         <Container>
-          <Row>
+          <Row style={{ width: "100%" }}>
             <Col md={6}>
               <MailLogo style={{ width: "90%" }} />
             </Col>
@@ -85,7 +88,7 @@ class Contact extends Component {
               <Form
                 form={this.state.form}
                 submitHandler={this.onsubmitHandler}
-                changed={(e, input) => this.onchangeHandler(e, input)}
+                changed={this.onChangeHandler}
               />
             </Col>
           </Row>

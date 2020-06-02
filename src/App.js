@@ -26,10 +26,6 @@ import { ReactComponent as GitLogo } from "./assets/git.svg";
 import { ReactComponent as LinuxLogo } from "./assets/linux.svg";
 import { ReactComponent as SshLogo } from "./assets/ssh.svg";
 import { ReactComponent as WebpackLogo } from "./assets/webpack.svg";
-import { ReactComponent as AppLogo } from "./assets/app.svg";
-import { ReactComponent as WebLogo } from "./assets/web.svg";
-import { ReactComponent as ErpLogo } from "./assets/erp.svg";
-import { ReactComponent as ResponsiveLogo } from "./assets/responsive.svg";
 
 class App extends Component {
   state = {
@@ -84,32 +80,7 @@ class App extends Component {
         ],
       },
     ],
-    services: [
-      {
-        icon: <ResponsiveLogo style={{ width: "100%", height: "50%" }} />,
-        title: "Responsive Web design",
-        text:
-          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus quis,",
-      },
-      {
-        icon: <WebLogo style={{ width: "100%", height: "50%" }} />,
-        title: "Web development",
-        text:
-          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus quis,",
-      },
-      {
-        icon: <AppLogo style={{ width: "100%", height: "50%" }} />,
-        title: "Mobile Apps Development",
-        text:
-          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus quis,",
-      },
-      {
-        icon: <ErpLogo style={{ width: "100%", height: "50%" }} />,
-        title: "eRP Development",
-        text:
-          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus quis,",
-      },
-    ],
+    social: ["twitter", "dev"],
   };
 
   hideBackdropToggler = () =>
@@ -128,11 +99,11 @@ class App extends Component {
             about={this.state.about}
             programming={this.state.programming}
           />
-          <Services services={this.state.services} />
+          <Services />
           <Projects />
           <Contact form={this.state.form} />
         </main>
-        <Footer />
+        <Footer links={this.state.links} />
 
         <Global
           styles={css`
@@ -153,8 +124,8 @@ class App extends Component {
 
             section,
             header,
-            .container,
-            .container-fluid {
+            ${"" /* .container,
+            .container-fluid */} {
               min-height: 100vh;
               ${"" /* Check on this styles later, they might cause issues */}
               display: flex;
@@ -197,13 +168,20 @@ class App extends Component {
               border: none !important;
             }
 
+            footer {
+              display: flex;
+              align-items: center;
+              height: 30rem;
+              background-image: linear-gradient(135deg, #000410, #0a1535);
+            }
+
             ${"" /* MEDIA QUERIES */}
 
             @media (max-width: 600px) {
               section,
               header,
-              .container,
-              .container-fluid {
+              ${"" /* .container,
+              .container-fluid  */} {
                 min-height: 100vh;
               }
               .svg-box {
