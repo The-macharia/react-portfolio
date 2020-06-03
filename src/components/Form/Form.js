@@ -12,6 +12,10 @@ const Form = (props) => {
     display: flex;
     flex-direction: column;
 
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+
     h5 {
       font-size: 1.8rem;
       line-height: 200%;
@@ -73,7 +77,7 @@ const Form = (props) => {
 
   return (
     <StyledForm onSubmit={props.submitHandler}>
-      <h5>Contact Me</h5>
+      <h5>Contact Me </h5>
       {inputs}
       <button type="submit">Send</button>
     </StyledForm>

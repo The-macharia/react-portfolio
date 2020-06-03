@@ -81,7 +81,7 @@ class Contact extends Component {
         <Heading title="Say Hello" mb="3rem" />
         <Container>
           <Row style={{ width: "100%" }}>
-            <Col md={6}>
+            <Col md={6} className="hideCol">
               <MailLogo style={{ width: "90%" }} />
             </Col>
             <Col md={6}>

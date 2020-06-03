@@ -11,6 +11,11 @@ import Backdrop from "./components/Backdrop";
 import DescriptionIcon from "@material-ui/icons/Description";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
+
+import FacebookIcon from "@material-ui/icons/Facebook";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import TwitterIcon from "@material-ui/icons/Twitter";
+
 import { ReactComponent as PythonLogo } from "./assets/python.svg";
 import { ReactComponent as JsLogo } from "./assets/js.svg";
 import { ReactComponent as HtmlLogo } from "./assets/html.svg";
@@ -80,7 +85,26 @@ class App extends Component {
         ],
       },
     ],
-    social: ["twitter", "dev"],
+    social: [
+      {
+        facebook: {
+          icon: <FacebookIcon style={{ fontSize: "3rem" }} />,
+          href: "https://www.facebook.com",
+        },
+      },
+      {
+        twitter: {
+          icon: <TwitterIcon style={{ fontSize: "3rem" }} />,
+          href: "https://www.twitter.com",
+        },
+      },
+      {
+        instagram: {
+          icon: <InstagramIcon style={{ fontSize: "3rem" }} />,
+          href: "https://www.instagram.com",
+        },
+      },
+    ],
   };
 
   hideBackdropToggler = () =>
@@ -103,7 +127,7 @@ class App extends Component {
           <Projects />
           <Contact form={this.state.form} />
         </main>
-        <Footer links={this.state.links} />
+        <Footer links={this.state.links} social={this.state.social} />
 
         <Global
           styles={css`
@@ -168,13 +192,6 @@ class App extends Component {
               border: none !important;
             }
 
-            footer {
-              display: flex;
-              align-items: center;
-              height: 30rem;
-              background-image: linear-gradient(135deg, #000410, #0a1535);
-            }
-
             ${"" /* MEDIA QUERIES */}
 
             @media (max-width: 600px) {
@@ -184,9 +201,15 @@ class App extends Component {
               .container-fluid  */} {
                 min-height: 100vh;
               }
+              .row {
+                margin: 1rem 0;
+              }
               .svg-box {
                 height: 50vh !important;
                 margin-bottom: 2rem;
+              }
+              .hideCol {
+                display: none;
               }
               nav {
                 background-color: #fff;

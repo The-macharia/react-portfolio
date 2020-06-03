@@ -18,7 +18,7 @@ const Heading = (props) => {
 
   return (
     <Grid item xs={12} style={styles}>
-      <h1 style={{ fontSize: "3rem" }}>{props.title}</h1>
+      <h1 style={{ fontSize: "3rem", color: props.color }}>{props.title}</h1>
       {subtitle}
     </Grid>
   );
