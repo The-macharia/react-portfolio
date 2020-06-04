@@ -173,6 +173,11 @@ class App extends Component {
               border: none !important;
               background-color: transparent;
             }
+            .MuiButtonBase-root {
+              padding: 0 !important;
+              width: 3rem !important;
+              height: 3.5rem !important;
+            }
             svg {
               width: 100%;
               height: 100%;
@@ -211,9 +216,9 @@ class App extends Component {
               .hideCol {
                 display: none;
               }
-              nav {
+              ${"" /* nav {
                 background-color: #fff;
-              }
+              } */}
             }
             @media (min-width: 600px) {
               .svg-box {
