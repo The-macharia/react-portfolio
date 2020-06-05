@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
 const StyledInput = styled("input")`
   width: 100%;
@@ -10,6 +11,7 @@ const StyledInput = styled("input")`
   transition: all 0.3s;
   border-radius: 0.5rem;
   border-bottom: 1.5px solid #000;
+  position: relative;
 
   &:focus {
     outline: none;
@@ -23,20 +25,40 @@ const StyledInput = styled("input")`
 
 const Input = (props) => {
   let input;
+  let classes = [];
+
+  if (!props.valid && props.touched) {
+    classes.push("invalid");
+  } else if (props.valid && props.touched) {
+    classes.push("valid");
+  }
+
+  const styles = {
+    position: "absolute",
+    top: "50%",
+    right: "1rem",
+    color: "darkgreen",
+  };
+
   switch (props.elementType) {
     case "input":
       input = (
-        <StyledInput
-          type={props.type}
-          {...props.config}
-          value={props.value}
-          onChange={props.changed}
-        />
+        <>
+          <StyledInput
+            className={classes.join(" ")}
+            type={props.type}
+            {...props.config}
+            value={props.value}
+            onChange={props.changed}
+          />
+          {/* props.valid && props.touched <CheckCircleIcon style={styles} /> */}
+        </>
       );
       break;
     case "textarea":
       input = (
         <textarea
+          className={classes.join(",")}
           type={props.type}
           {...props.config}
           value={props.value}
@@ -47,6 +69,7 @@ const Input = (props) => {
     default:
       input = (
         <StyledInput
+          className={classes.join(",")}
           type="text"
           {...props.config}
           value={props.value}

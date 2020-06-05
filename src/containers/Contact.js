@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 // import Form from "../components/Form/Form";
 import { ReactComponent as MailLogo } from "../assets/mail.svg";
-import Input from "../components/Form/Input";
+import Input from "../components/Input";
 import styled from "@emotion/styled";
 
 class Contact extends Component {
@@ -20,9 +20,11 @@ class Contact extends Component {
           placeholder: "Your Name",
           id: "name",
         },
+        valid: true,
+        touched: false,
         validation: {
           required: true,
-          min: 4,
+          min: 2,
         },
       },
       email: {
@@ -33,15 +35,19 @@ class Contact extends Component {
           placeholder: "Your Email",
           id: "email",
         },
+        valid: true,
+        touched: false,
         validation: {
           required: true,
           min: 4,
+          pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
         },
       },
       subject: {
         el: "input",
         value: "",
         type: "text",
+        touched: false,
         config: {
           placeholder: "Subject",
           id: "subject",
@@ -56,20 +62,50 @@ class Contact extends Component {
           placeholder: "Your Message",
           id: "message",
         },
+        valid: true,
+        touched: false,
         validation: {
           required: true,
-          min: 4,
+          min: 2,
         },
       },
     },
   };
 
+  // validateEmail = (email) => {
+  //   var re = /\S+@\S+\.\S+/;
+  //   return re.test(email);
+  // };
+
+  formValidationHandler = (rules, input) => {
+    let valid = true;
+    if (rules) {
+      if (rules.required) {
+        valid = valid && input.value.trim() !== " ";
+      }
+      if (rules.min) {
+        valid = valid && input.value.length >= rules.min;
+      }
+      if (rules.pattern) {
+        valid = valid && rules.pattern.test(input.value);
+      }
+    }
+    return valid;
+  };
+
   onChangeHandler = (e) => {
     const updatedForm = this.state.form;
+
     updatedForm[e.target.id] = {
       ...updatedForm[e.target.id],
       value: e.target.value,
+      touched: true,
+      valid: this.formValidationHandler(
+        updatedForm[e.target.id].validation,
+        updatedForm[e.target.id]
+      ),
     };
+
     this.setState({ form: updatedForm });
   };
 
@@ -78,6 +114,21 @@ class Contact extends Component {
   };
 
   render() {
+    const inputs = Object.entries(this.state.form).map((el) => (
+      <div key={el[0]}>
+        <label htmlFor={el[1].config.id}>{el[1].config.id}</label>
+        <Input
+          type={el[1].type}
+          elementType={el[1].el}
+          config={el[1].config}
+          changed={this.onChangeHandler}
+          value={el[1].value}
+          valid={el[1].valid}
+          touched={el[1].touched}
+        />
+      </div>
+    ));
+
     return (
       <section id="contact" style={{}}>
         <Heading title="Say Hello" mb="3rem" />
@@ -87,20 +138,9 @@ class Contact extends Component {
               <MailLogo style={{ width: "90%" }} />
             </Col>
             <Col md={6}>
-              <StyledForm>
+              <StyledForm onSubmit={this.onsubmitHandler}>
                 <h5>Contact Me </h5>
-                {Object.entries(this.state.form).map((el) => (
-                  <div key={el[0]}>
-                    <label htmlFor={el[1].config.id}>{el[1].config.id}</label>
-                    <Input
-                      type={el[1].type}
-                      elementType={el[1].el}
-                      config={el[1].config}
-                      changed={this.onChangeHandler}
-                      value={el[1].value}
-                    />
-                  </div>
-                ))}
+                {inputs}
                 <button type="submit">Send</button>
               </StyledForm>
             </Col>
@@ -169,10 +209,3 @@ const StyledForm = styled("form")`
   }
 `;
 export default Contact;
-//sfdffd{
-/* <Form
-                form={this.state.form}
-                submitHandler={this.onsubmitHandler}
-                changed={this.onChangeHandler}
-              /> */
-//}

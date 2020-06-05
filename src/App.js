@@ -170,6 +170,18 @@ class App extends Component {
               letter-spacing: 0.1rem;
               font-size: 1.55rem;
             }
+            .invalid {
+              border-bottom: 1.5px solid red !important;
+              &:hover {
+                border-bottom: 1.5px solid red;
+              }
+            }
+            .valid {
+              border-bottom: 1.5px solid darkgreen !important;
+              &:hover {
+                border-bottom: 1.5px solid darkgreen;
+              }
+            }
             .card {
               border: none !important;
               background-color: transparent;
