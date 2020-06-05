@@ -1,6 +1,5 @@
 import React from "react";
 import MenuIcon from "@material-ui/icons/Menu";
-// import Logo from "../UI/Logo";
 import Link from "./Links";
 import { Button } from "@material-ui/core";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
@@ -16,7 +15,7 @@ const Nav = (props) => {
     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
       document.querySelector("nav").style.backgroundColor = "#fff";
       document.querySelector("nav").style.boxShadow =
-        "0 .1rem .2rem rgba(0,0,0, .35)";
+        "0 .1rem .2rem rgba(0,0,0, .23)";
     } else {
       document.querySelector("nav").style.boxShadow = "none";
       document.querySelector("nav").style.backgroundColor = "transparent";

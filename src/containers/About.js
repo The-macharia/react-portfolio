@@ -1,12 +1,10 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.css";
 import Row from "react-bootstrap/Row";
 
 import Cards from "../components/Card";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Heading from "../components/Heading";
-// import { Paper } from "@material-ui/core";
 
 const About = (props) => {
   return (
@@ -20,10 +18,10 @@ const About = (props) => {
                 "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus quis, eaque reiciendis vero optio esse tempora laboriosam aliquid expedita assumenda hic aliquam repellat maiores ipsa minima quod est."
               }
             />
-            <div className="row w-50 my-3">
+            <div className="row my-3 about-social">
               {props.about.map((el) => (
                 <div
-                  className="d-flex flex-column col text-center"
+                  className="d-flex flex-column col text-center mr-3"
                   key={el.text}
                 >
                   <span>{el.icon}</span>

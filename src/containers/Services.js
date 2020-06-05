@@ -10,6 +10,7 @@ import { ReactComponent as AppLogo } from "../assets/app.svg";
 import { ReactComponent as WebLogo } from "../assets/web.svg";
 import { ReactComponent as ErpLogo } from "../assets/erp.svg";
 import { ReactComponent as ResponsiveLogo } from "../assets/responsive.svg";
+import Image from "../assets/drawing.png";
 
 class Services extends Component {
   state = {
@@ -42,12 +43,12 @@ class Services extends Component {
   };
   render() {
     return (
-      <section id="services">
+      <section id="services" style={{ backgroundImage: `url(${Image})` }}>
         <Container>
           <Heading title="What I Do" mb={"3rem"} />
           <Row>
             {this.state.services.map((service) => (
-              <Col sm={6} md={4} key={service.title}>
+              <Col md={6} key={service.title}>
                 <ServiceCard
                   title={service.title}
                   icon={service.icon}

@@ -145,11 +145,11 @@ class App extends Component {
               font-size: 62.5%;
               scroll-behavior: smooth;
             }
-
+            #services {
+              background-size: 2%;
+            }
             section,
-            header,
-            ${"" /* .container,
-            .container-fluid */} {
+            header {
               min-height: 100vh;
               ${"" /* Check on this styles later, they might cause issues */}
               display: flex;
@@ -157,6 +157,7 @@ class App extends Component {
               justify-content: center;
               align-items: center;
             }
+
             h1 {
               font-weight: bold;
               letter-spacing: 0.1rem;
@@ -182,9 +183,9 @@ class App extends Component {
               width: 100%;
               height: 100%;
             }
-            span {
+            ${"" /* span {
               padding: 1rem 2rem;
-            }
+            } */}
             span svg {
               width: 5rem !important;
             }
@@ -200,11 +201,20 @@ class App extends Component {
             ${"" /* MEDIA QUERIES */}
 
             @media (max-width: 600px) {
+              .container,
+              .container-fluid {
+                padding: 0;
+              }
               section,
-              header,
-              ${"" /* .container,
-              .container-fluid  */} {
+              header {
                 min-height: 100vh;
+              }
+              #about {
+                text-align: center;
+              }
+              .about-social {
+                width: 100% !important;
+                justify-content: center;
               }
               .row {
                 margin: 1rem 0;

@@ -30,7 +30,7 @@ const CardDiv = styled("div")`
   margin: 1rem 0;
   transition: all 0.3s;
   text-align: center;
-
+  background-color: #fff;
   :hover,
   :active {
     background-color: #222;
