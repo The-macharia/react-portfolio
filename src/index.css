@@ -17,9 +17,20 @@ html {
   scroll-behavior: smooth;
 }
 
+
 section,
 header,
 .container {
   min-height: 100vh !important;
   position: relative;
 } */
+.valid::after {
+  content: "&radic;";
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  width: 1rem;
+  height: 1rem;
+
+  transform: translateY(-50%);
+}

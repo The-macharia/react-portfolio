@@ -157,7 +157,20 @@ class App extends Component {
               justify-content: center;
               align-items: center;
             }
+            #about {
+              position: relative;
 
+              &::before {
+                content: "";
+                height: 100%;
+                width: 50%;
+                border-radius: 83% 17% 75% 25% / 35% 55% 45% 65%;
+                background-color: rgba(0, 0, 0, 0.1);
+                position: absolute;
+                top: 0;
+                left: 0;
+              }
+            }
             h1 {
               font-weight: bold;
               letter-spacing: 0.1rem;
@@ -180,6 +193,16 @@ class App extends Component {
               border-bottom: 1.5px solid darkgreen !important;
               &:hover {
                 border-bottom: 1.5px solid darkgreen;
+              }
+              &::after {
+                content: "&radic;";
+                position: absolute;
+                top: 50%;
+                right: 1rem;
+                width: 1rem;
+                height: 1rem;
+
+                transform: translateY(-50%);
               }
             }
             .card {
@@ -223,6 +246,13 @@ class App extends Component {
               }
               #about {
                 text-align: center;
+                &::before {
+                  border-radius: 0% 100% 0% 100% / 60% 0% 100% 40%;
+                  bottom: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 50%;
+                }
               }
               .about-social {
                 width: 100% !important;

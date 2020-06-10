@@ -25,7 +25,7 @@ const Header = (props) => {
               title={"Macharia Eric"}
               btn={"Hire Me"}
               featured={"hi, this is me"}
-              text={`Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus
+              text={`Lorem ipsum dolor sit, ✌ amet consectetur adipisicing elit. Earum error necessitatibus
                 quis, eaque reiciendis vero optio esse tempora laboriosam aliquid expedita assumenda
                 hic aliquam repellat maiores ipsa minima quod est.`}
             />

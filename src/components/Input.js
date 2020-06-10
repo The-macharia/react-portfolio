@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import CheckCircleIcon from "@material-ui/icons/CheckCircle";
+// import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
 const StyledInput = styled("input")`
   width: 100%;
@@ -33,12 +33,12 @@ const Input = (props) => {
     classes.push("valid");
   }
 
-  const styles = {
-    position: "absolute",
-    top: "50%",
-    right: "1rem",
-    color: "darkgreen",
-  };
+  // const styles = {
+  //   position: "absolute",
+  //   top: "50%",
+  //   right: "1rem",
+  //   color: "darkgreen",
+  // };
 
   switch (props.elementType) {
     case "input":

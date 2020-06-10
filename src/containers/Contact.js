@@ -110,7 +110,14 @@ class Contact extends Component {
   };
 
   onsubmitHandler = (e) => {
+    const items = [];
     e.preventDefault();
+
+    for (let item in this.state.form) {
+      items.push(item);
+    }
+    const mail = items.map((item) => item);
+    console.log(items);
   };
 
   render() {
