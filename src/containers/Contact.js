@@ -116,7 +116,7 @@ class Contact extends Component {
     for (let item in this.state.form) {
       items.push(item);
     }
-    const mail = items.map((item) => item);
+    // const mail = items.map((item) => item);
     console.log(items);
   };
 

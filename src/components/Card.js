@@ -58,3 +58,23 @@ export const ServiceCard = (props) => (
     </div>
   </CardDiv>
 );
+
+export const ProjectCard = (props) => {
+  return (
+    <div className="card">
+      <div className="card__image">{props.image}</div>
+      <div className="card__cta">
+        {Object.values(props.cta).map((ct) => (
+          <a
+            href={ct.url}
+            key={ct.url}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {ct.icon}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+};
