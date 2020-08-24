@@ -60,7 +60,7 @@ class Projects extends Component {
 
     // <div className="col-md-4" key={project[0]}>
     //   <ProjectCard {...project[1]} />
-    // </div>
+    // </div>`
     return (
       <section id="projects">
         <Heading title="Some Of My Work" mb="3rem" />

@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import { ReactComponent as MailLogo } from "../assets/mail.svg";
 import Input from "../components/Input";
 import styled from "@emotion/styled";
+import axios from "axios";
 
 class Contact extends Component {
   state = {
@@ -70,6 +71,8 @@ class Contact extends Component {
         },
       },
     },
+
+    sent: false,
   };
 
   // validateEmail = (email) => {
@@ -115,7 +118,11 @@ class Contact extends Component {
 
     const form = Object.entries(this.state.form);
     form.map((arr) => (message[arr[0]] = arr[1].value));
-    console.log(message);
+
+    axios
+      .post("https://the-macharia.firebaseio.com/messages.json", message)
+      .then((res) => this.setState({ sent: true }))
+      .catch((error) => this.setState({ sent: false }));
   };
 
   render() {
