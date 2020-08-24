@@ -8,15 +8,44 @@
 
   transform: translateY(-50%);
 }
+.project__card {
+  /* background-color: blue; */
+}
 
 .card__image {
+  /* width: 50%; */
 }
 
 .card__cta {
   display: flex;
   justify-content: center;
+  padding: 1rem 0;
 }
 .card__cta a {
   padding: 1rem;
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: all 0.2s;
+  color: rgb(88, 80, 80);
+}
+
+.card__cta a:hover {
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  color: #0a1535;
+}
+
+.nav-link {
+  letter-spacing: 0.1rem;
+  color: rgb(88, 80, 80);
+}
+
+.nav-link:hover,
+.nav-link:active {
+  letter-spacing: 0.2rem;
+}
+
+a:hover {
+  color: red;
 }

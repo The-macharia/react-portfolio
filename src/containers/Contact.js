@@ -81,7 +81,7 @@ class Contact extends Component {
     let valid = true;
     if (rules) {
       if (rules.required) {
-        valid = valid && input.value.trim() !== " ";
+        valid = valid && input.value.trim(" ") !== " ";
       }
       if (rules.min) {
         valid = valid && input.value.length >= rules.min;
@@ -110,14 +110,12 @@ class Contact extends Component {
   };
 
   onsubmitHandler = (e) => {
-    const items = [];
     e.preventDefault();
+    const message = {};
 
-    for (let item in this.state.form) {
-      items.push(item);
-    }
-    // const mail = items.map((item) => item);
-    console.log(items);
+    const form = Object.entries(this.state.form);
+    form.map((arr) => (message[arr[0]] = arr[1].value));
+    console.log(message);
   };
 
   render() {

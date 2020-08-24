@@ -146,7 +146,7 @@ class App extends Component {
               scroll-behavior: smooth;
             }
             #services {
-              background-size: 2%;
+
             }
             section,
             header {
@@ -160,16 +160,6 @@ class App extends Component {
             #about {
               position: relative;
 
-              &::before {
-                content: "";
-                height: 100%;
-                width: 50%;
-                border-radius: 83% 17% 75% 25% / 35% 55% 45% 65%;
-                background-color: rgba(0, 0, 0, 0.1);
-                position: absolute;
-                top: 0;
-                left: 0;
-              }
             }
             h1 {
               font-weight: bold;
@@ -246,13 +236,13 @@ class App extends Component {
               }
               #about {
                 text-align: center;
-                &::before {
+                ${"" /* &::before {
                   border-radius: 0% 100% 0% 100% / 60% 0% 100% 40%;
                   bottom: 0;
                   left: 0;
                   width: 100%;
                   height: 50%;
-                }
+                } */}
               }
               .about-social {
                 width: 100% !important;

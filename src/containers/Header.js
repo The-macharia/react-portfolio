@@ -25,9 +25,8 @@ const Header = (props) => {
               title={"Macharia Eric"}
               btn={"Hire Me"}
               featured={"hi, this is me"}
-              text={`Lorem ipsum dolor sit, ✌ amet consectetur adipisicing elit. Earum error necessitatibus
-                quis, eaque reiciendis vero optio esse tempora laboriosam aliquid expedita assumenda
-                hic aliquam repellat maiores ipsa minima quod est.`}
+              text={`I am Eric, ✌ a Software Engineer living in Kenya. I am currently  specializing as a Frontend software engineer.
+              All i want to do is build software that matters, make products that make people's lives easier even if it is just one person. Scratch that, atleast two 😁.`}
             />
           </div>
         </div>

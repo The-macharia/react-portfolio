@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import styled from "@emotion/styled";
+import "./components.css";
 
 const Card = (props) => (
   <div className="card">
@@ -58,10 +59,22 @@ export const ServiceCard = (props) => (
     </div>
   </CardDiv>
 );
+export const ServicesCard = (props) => (
+  <div className="box">
+    <div className="content">
+      <h2>01</h2>
+      <h3>Service One</h3>
+      <p>
+        llllllllllllllllllllllllllllllllllllllllllllllllll
+        sddddddddddddddsaslllllllllllllllllllllllllllllllllllllllllll
+      </p>
+    </div>
+  </div>
+);
 
 export const ProjectCard = (props) => {
   return (
-    <div className="card">
+    <div className=" project__card">
       <div className="card__image">{props.image}</div>
       <div className="card__cta">
         {Object.values(props.cta).map((ct) => (

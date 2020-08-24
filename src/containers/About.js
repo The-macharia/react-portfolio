@@ -15,7 +15,7 @@ const About = (props) => {
             <Cards
               title={"About Me"}
               text={
-                "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum error necessitatibus quis, eaque reiciendis vero optio esse tempora laboriosam aliquid expedita assumenda hic aliquam repellat maiores ipsa minima quod est."
+                "On a 0 and 1 basis, I`m a Fullstack Software Engineer, just currently specializing as a Frontend Engineer. I am a graduate in Mathematics and Computer Science. I am a chess enthusiast, ney! Chess Guru and you can obviously imagine where I turn to when code fails me."
               }
             />
             <div className="row my-3 about-social">
