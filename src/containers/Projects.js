@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Heading from "../components/Heading";
 import { ProjectCard } from "../components/Card";
-import Image from "../assets/drawing.png";
+import Image from "../assets/wave.jpg";
 import "../components/components.css";
 class Projects extends Component {
   state = {
@@ -35,32 +35,26 @@ class Projects extends Component {
   };
   render() {
     const projects = Object.entries(this.state.projects).map((project) => (
-      <div className="project__card" key={Math.random()}>
-        <div className="project__face face1">
-          <div className="project__content">
-            <img src={Image} alt="Website" />
+      <div class="project_card">
+        <div class="face face1">
+          <div class="content">
+            <img src={Image} alt="Project 1" />
             <h3>Design</h3>
           </div>
         </div>
-
-        <div className="project__face face2">
-          <div className="project__content">
+        <div class="face face2">
+          <div class="content">
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum
-              error necessitatibus quis
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita
+              beatae et laboriosam, eveniet voluptatum eaque ad cum,
+              reprehenderit dolorem repudiandae nihil ducimus, dignissimos
             </p>
-            <div className="project__cta">
-              <a href="/">source</a>
-              <a href="/">live</a>
-            </div>
+            <a href="#home">Read More</a>
           </div>
         </div>
       </div>
     ));
 
-    // <div className="col-md-4" key={project[0]}>
-    //   <ProjectCard {...project[1]} />
-    // </div>`
     return (
       <section id="projects">
         <Heading title="Some Of My Work" mb="3rem" />

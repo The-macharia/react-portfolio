@@ -45,7 +45,3 @@
 .nav-link:active {
   letter-spacing: 0.2rem;
 }
-
-a:hover {
-  color: red;
-}

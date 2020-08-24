@@ -46,6 +46,7 @@ class Services extends Component {
       <section id="services" style={{ background: "#060c21", zIndex: "-10" }}>
         <Container>
           <Heading title="What I Do" mb={"3rem"} />
+
           <div className="services">
             {this.state.services.map((service, index) => (
               <div className="box" key={JSON.stringify(service)}>
