@@ -9,25 +9,40 @@ class Projects extends Component {
     projects: {
       mine: {
         name: "Personal Portfolio",
+        image: Image,
         cta: {
-          source: { url: "the-macharia.web.app", icon: "source" },
-          live: { url: "the-macharia.webs.app", icon: "live" },
+          source: {
+            url: "the-mcharia.web.app",
+            icon: "source",
+            label: "Source",
+          },
+          live: { url: "the-macharia.web.app", icon: "live", label: "Live" },
         },
         details: "lorem",
       },
       you: {
-        name: "Personal Porlio",
+        name: "Personal Portfolio",
+        image: Image,
         cta: {
-          source: { url: "the-macharia.web.app", icon: "source" },
-          live: { url: "the-macharia.webs.app", icon: "live" },
+          source: {
+            url: "the-machaia.web.app",
+            icon: "source",
+            label: "Source",
+          },
+          live: { url: "the-macharia.eb.app", icon: "live", label: "Live" },
         },
         details: "lorem",
       },
       yours: {
         name: "rsonal Portfolio",
+        image: Image,
         cta: {
-          source: { url: "the-macharia.web.app", icon: "source" },
-          live: { url: "the-macharia.webs.app", icon: "live" },
+          source: {
+            url: "the-machara.web.app",
+            icon: "source",
+            label: "Source",
+          },
+          live: { url: "the-macharia.web.ap", icon: "live", label: "Live" },
         },
         details: "lorem",
       },
@@ -35,35 +50,26 @@ class Projects extends Component {
   };
   render() {
     const projects = Object.entries(this.state.projects).map((project) => (
-      <div class="project_card">
-        <div class="face face1">
-          <div class="content">
-            <img src={Image} alt="Project 1" />
-            <h3>Design</h3>
-          </div>
-        </div>
-        <div class="face face2">
-          <div class="content">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita
-              beatae et laboriosam, eveniet voluptatum eaque ad cum,
-              reprehenderit dolorem repudiandae nihil ducimus, dignissimos
-            </p>
-            <a href="#home">Read More</a>
-          </div>
-        </div>
-      </div>
+      <ProjectCard
+        key={project[0]}
+        img={project[1].image}
+        title={project[1].name}
+        text={project[1].details}
+        cta={project[1].cta}
+      />
     ));
 
     return (
-      <section id="projects">
+      <section id="projects" className="project">
         <Heading title="Some Of My Work" mb="3rem" />
-        <div className="container">
-          <div className="project__container">{projects}</div>
-        </div>
+
+        <div className="container project__container">{projects}</div>
       </section>
     );
   }
+}
+{
+  /* <div className="project__container">{projects}</div> */
 }
 
 export default Projects;

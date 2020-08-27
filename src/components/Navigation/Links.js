@@ -33,7 +33,7 @@ const Links = (props) => {
 
   return (
     <UL className="navbar-nav" style={ulStyles}>
-      <div class="marker"></div>
+      <div className="marker"></div>
 
       {props.links.map((link) => (
         <li className="nav-item active" key={link}>

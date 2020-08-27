@@ -55,7 +55,6 @@ class App extends Component {
         languages: [
           <PythonLogo style={{ width: "50%" }} />,
           <JsLogo style={{ width: "50%" }} />,
-          // <NodeLogo style={{ width: "50%" }} />,
           <HtmlLogo style={{ width: "50%" }} />,
           <CssLogo style={{ width: "50%" }} />,
         ],
@@ -64,7 +63,6 @@ class App extends Component {
         frameworks: [
           <ReactLogo style={{ width: "50%" }} />,
           <JqueryLogo style={{ width: "50%" }} />,
-          // <ExpressLogo style={{ width: "50%" }} />,
           <BootstrapLogo style={{ width: "50%" }} />,
           <SassLogo style={{ width: "50%" }} />,
         ],
@@ -131,23 +129,6 @@ class App extends Component {
 
         <Global
           styles={css`
-            * {
-              margin: 0;
-              padding: 0;
-              box-sizing: border-box;
-            }
-            body {
-              font-size: 1.4rem;
-              color: #222;
-              line-height: 200% !important;
-            }
-            html {
-              font-size: 62.5%;
-              scroll-behavior: smooth;
-            }
-            #services {
-
-            }
             section,
             header {
               min-height: 100vh;
@@ -159,7 +140,6 @@ class App extends Component {
             }
             #about {
               position: relative;
-
             }
             h1 {
               font-weight: bold;

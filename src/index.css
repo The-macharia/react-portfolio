@@ -8,13 +8,6 @@
 
   transform: translateY(-50%);
 }
-.project__card {
-  /* background-color: blue; */
-}
-
-.card__image {
-  /* width: 50%; */
-}
 
 .card__cta {
   display: flex;
@@ -37,6 +30,7 @@
 }
 
 .nav-link {
+  transition: all 0.2s;
   letter-spacing: 0.1rem;
   color: rgb(88, 80, 80);
 }
