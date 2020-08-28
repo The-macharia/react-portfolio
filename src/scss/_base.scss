@@ -5,14 +5,24 @@
 }
 
 body {
-  font-size: 1.4rem;
-  color: #222;
+  font-size: $d-font;
+  color: $color-dark;
   line-height: 200% !important;
 }
 
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+}
+
+::selection {
+  background: $color-primary;
+  color: $color-white;
+}
+
+::-moz-selection {
+  background: $color-primary;
+  color: $color-white;
 }
 
 .container {

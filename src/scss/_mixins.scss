@@ -43,3 +43,9 @@ $breakpoint argument choices
     }
   }
 }
+
+@mixin flex-props {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
