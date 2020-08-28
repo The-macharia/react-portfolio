@@ -68,8 +68,5 @@ class Projects extends Component {
     );
   }
 }
-{
-  /* <div className="project__container">{projects}</div> */
-}
 
 export default Projects;

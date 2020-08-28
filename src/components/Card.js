@@ -75,15 +75,15 @@ export const ServicesCard = (props) => (
 export const ProjectCard = (props) => {
   return (
     <div className="project__card">
-      <div className="project__face--face1">
+      <div className="project__face project__face--face1">
         <div className="content">
-          <img src={props.image} alt="Project 1" />
+          <img src={props.image} alt="Project 1" className="project__img" />
           <h3>{props.title}</h3>
         </div>
       </div>
 
-      <div className="project__face--face2">
-        <div className="project__content">
+      <div className="project__face project__face--face2">
+        <div className="content">
           <p>{props.text}</p>
 
           <div className="project__cta">
