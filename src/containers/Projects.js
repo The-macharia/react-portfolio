@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Heading from "../components/Heading";
 import { ProjectCard } from "../components/Card";
 import Image from "../assets/wave.jpg";
-import "../components/components.css";
+
 class Projects extends Component {
   state = {
     projects: {

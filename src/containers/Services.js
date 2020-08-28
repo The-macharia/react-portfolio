@@ -10,7 +10,6 @@ import { ReactComponent as AppLogo } from "../assets/app.svg";
 import { ReactComponent as WebLogo } from "../assets/web.svg";
 import { ReactComponent as ErpLogo } from "../assets/erp.svg";
 import { ReactComponent as ResponsiveLogo } from "../assets/responsive.svg";
-import "../components/components.css";
 
 class Services extends Component {
   state = {
@@ -43,20 +42,22 @@ class Services extends Component {
   };
   render() {
     return (
-      <section id="services" style={{ background: "#060c21", zIndex: "-10" }}>
+      <section id="services">
         <Container>
           <Heading title="What I Do" mb={"3rem"} />
 
           <div className="services">
-            {this.state.services.map((service, index) => (
-              <div className="box" key={JSON.stringify(service)}>
-                <div className="content">
-                  <h2>0{index + 1}</h2>
-                  <h3>{service.title}</h3>
-                  <p>{service.text}</p>
-                </div>
-              </div>
-            ))}
+            <Row>
+              {this.state.services.map((service, index) => (
+                <Col md={4} xs={12} key={JSON.stringify(service)}>
+                  <ServicesCard
+                    index={index}
+                    title={service.title}
+                    text={service.text}
+                  />
+                </Col>
+              ))}
+            </Row>
           </div>
         </Container>
       </section>
@@ -64,18 +65,3 @@ class Services extends Component {
   }
 }
 export default Services;
-// {this.state.services.map((service) => (
-//   <Col md={3} key={service.title}>
-//     <ServicesCard />
-//   </Col>
-// ))}
-
-// {this.state.services.map((service) => (
-//   <Col md={6} key={service.title}>
-//     <ServiceCard
-//       title={service.title}
-//       icon={service.icon}
-//       text={service.text}
-//     />
-//   </Col>
-// ))}
