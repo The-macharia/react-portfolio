@@ -19,22 +19,8 @@ const Links = (props) => {
     alignItems: "center",
   };
 
-  const marker = document.querySelector(".marker");
-  const links = document.querySelectorAll(".navbar-nav a");
-
-  const indicator = (e) => {
-    marker.style.left = e.offsetLeft + "px";
-    marker.style.width = e.offsetWidth + "px";
-  };
-
-  links.forEach((link) =>
-    link.addEventListener("mouseover", (e) => indicator(e.target))
-  );
-
   return (
     <UL className="navbar-nav" style={ulStyles}>
-      <div className="marker"></div>
-
       {props.links.map((link) => (
         <li className="nav-item active" key={link}>
           <a
@@ -51,3 +37,11 @@ const Links = (props) => {
 };
 
 export default Links;
+
+export const NLink = (props) => (
+  <li className="nav__item" onMouseOver={props.hoverToggle}>
+    <a href={`#${props.title}`} className="nav__link">
+      {props.title}
+    </a>
+  </li>
+);

@@ -1,6 +1,6 @@
 import React from "react";
 import MenuIcon from "@material-ui/icons/Menu";
-import Link from "./Links";
+import Link, { NLink } from "./Links";
 import { Button } from "@material-ui/core";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 
@@ -24,11 +24,14 @@ const Nav = (props) => {
 
   return (
     <nav className="navbar navbar-expand-sm fixed-top w-100" style={styles}>
-      <a className="navbar-brand mr-auto" href="/">
+      <a
+        className="navbar-brand mr-auto"
+        href="/"
+        onmouseover={props.hoverToggle}
+      >
         <Logo />
       </a>
       <Button
-        // style={{ color: "#04091e", backgroundColor: "#8e701d" }}
         className="navbar-toggler"
         type="button"
         data-toggle="collapse"
@@ -53,3 +56,22 @@ const Nav = (props) => {
 };
 
 export default Nav;
+
+export const Navbar = (props) => (
+  <nav className="nav">
+    <div className="nav__brand">
+      <Logo />
+    </div>
+
+    <div className="nav__hamburger" onClick={props.collapse}></div>
+    <div id="marker"></div>
+
+    <div className="nav__collapse" id="collapse">
+      <ul className="nav__ul">
+        {props.links.map((link) => (
+          <NLink hoverToggle={props.hoverToggle} key={link} title={link} />
+        ))}
+      </ul>
+    </div>
+  </nav>
+);

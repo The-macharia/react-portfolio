@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../components/Navigation/Nav";
+import Nav, { Navbar } from "../components/Navigation/Nav";
 import "bootstrap/dist/css/bootstrap.css";
 import Image from "../assets/wave.jpg";
 import Card from "../components/Card";
@@ -12,10 +12,18 @@ const Header = (props) => {
     backgroundPosition: "right",
     width: "100% !important",
   };
+  {
+    /* <Nav links={props.links} clicked={props.clicked} /> */
+  }
   return (
     <header id="home" style={styles}>
       <div className="container-fluid d-flex flex-column justify-content-center">
-        <Nav links={props.links} clicked={props.clicked} />
+        <Navbar
+          hoverToggle={props.hoverToggle}
+          links={props.links}
+          collapse={props.collapse}
+        />
+
         <div className="row align-items-center justify-content-center">
           <div className="col-md-6 col-lg-8 col-sm-12 svg-box">
             <ReactImage />

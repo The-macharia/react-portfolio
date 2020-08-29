@@ -28,3 +28,20 @@ html {
 .container {
   position: relative;
 }
+.col-12,
+.col-4 {
+  @include flex-props;
+}
+
+h1 {
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  color: $color-dark;
+}
+h5 {
+  background-color: transparent !important;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 1.55rem;
+}

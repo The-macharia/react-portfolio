@@ -103,6 +103,23 @@ class App extends Component {
         },
       },
     ],
+    isCollapsed: false,
+  };
+
+  collapseToggler = () => {
+    this.setState({ isCollapsed: !this.state.isCollapsed });
+    console.log(this.state.isCollapsed);
+    const collapsible = document.getElementById("collapse");
+    collapsible.style.height = "auto"
+      ? this.state.isCollapsed
+      : (collapsible.style.height = "auto");
+  };
+
+  hoverToggle = (e) => {
+    const marker = document.querySelector("#marker");
+
+    marker.style.left = e.target.offsetLeft + "px";
+    marker.style.width = e.target.offsetWidth + 30 + "px";
   };
 
   hideBackdropToggler = () =>
@@ -115,7 +132,12 @@ class App extends Component {
           <Backdrop clicked={this.hideBackdropToggler} />
         )}
 
-        <Header links={this.state.links} clicked={this.hideBackdropToggler} />
+        <Header
+          links={this.state.links}
+          clicked={this.hideBackdropToggler}
+          hoverToggle={(e) => this.hoverToggle(e)}
+          collapse={() => this.collapseToggler()}
+        />
         <main>
           <About
             about={this.state.about}
@@ -138,21 +160,7 @@ class App extends Component {
               justify-content: center;
               align-items: center;
             }
-            #about {
-              position: relative;
-            }
-            h1 {
-              font-weight: bold;
-              letter-spacing: 0.1rem;
-              color: #222;
-            }
-            h5 {
-              backgroud-color: transparent !important;
-              font-weight: bold;
-              font-family: "Roboto", sans-serif;
-              letter-spacing: 0.1rem;
-              font-size: 1.55rem;
-            }
+
             .invalid {
               border-bottom: 1.5px solid red !important;
               &:hover {

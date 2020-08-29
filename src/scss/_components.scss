@@ -101,7 +101,8 @@
   }
 }
 
-//////////////////////////SERVICE CARD//////////////
+////////////////////////// SERVICE CARD//////////////
+
 .services {
   width: 100%;
   position: relative;
@@ -176,5 +177,126 @@
   }
   &__card:hover &__content h2 {
     top: -140px;
+  }
+}
+
+////////////////////////// NAVIGATION BAR //////////////
+.nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $color-white;
+  margin: 0;
+  padding: 2rem;
+  z-index: 1000;
+
+  @include flex-props;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+    background: $color-primary-light;
+    color: $color-white;
+  }
+
+  &__brand {
+    width: 20%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+
+    @include respond(tab-port) {
+      width: 100%;
+      padding: 1rem 0;
+      z-index: 100;
+    }
+
+    svg {
+      width: 50%;
+      height: auto;
+      height: 100%;
+    }
+  }
+  &__hamburger {
+    display: none;
+
+    @include respond(tab-port) {
+      @include flex-props;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      position: absolute;
+      right: 2rem;
+      top: 2rem;
+      background: #ff0057;
+    }
+  }
+
+  &__collapse {
+    width: 50%;
+    transition: all 0.3s;
+
+    @include respond(tab-port) {
+      margin-top: 3rem;
+      width: 100%;
+      height: 0;
+    }
+  }
+
+  &__ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    margin: 0 1rem;
+
+    @include respond(tab-port) {
+      width: 100%;
+      margin: 1rem 0;
+      @include flex-props;
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-size: 2em;
+    color: $color-black;
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      color: $color-primary-light;
+    }
+
+    @include respond(tab-port) {
+      flex: 1;
+      color: $color-light;
+      padding: 1rem;
+      text-align: center;
+    }
+  }
+  #marker {
+    position: absolute;
+    height: 0.4rem;
+    width: 0;
+    background: $color-black;
+    bottom: -0.5rem;
+    left: 0;
+    transition: 0.5s;
+    border-radius: 0.4rem;
+
+    @include respond(tab-port) {
+      display: none;
+    }
   }
 }
